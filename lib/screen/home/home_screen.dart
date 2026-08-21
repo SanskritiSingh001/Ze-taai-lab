@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../about/widgets/cards/ClientLogo.dart';
 import '../about/widgets/cards/PortfolioCard.dart';
 import '../about/widgets/cards/TestimonialCard.dart';
@@ -510,8 +509,8 @@ class HomeScreen extends StatelessWidget {
                   // Logo
                   Image.asset(
                     'assets/images/logo/Logo.jpeg',
-                    width: 120,
-                    height: 40,
+                    width: 150,
+                    height: 60,
                     fit: BoxFit.contain,
                     alignment: Alignment.centerLeft,
                   ),
@@ -520,7 +519,7 @@ class HomeScreen extends StatelessWidget {
 
                   // Address
                   const Text(
-                    'Your company address goes here.',
+                    'j-14, BJB Nagar, Lewis Road, Bhubneswar, 751014, Odisha, India',
                     style: TextStyle(
                       fontSize: 14,
                       height: 1.5,
