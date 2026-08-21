@@ -1,0 +1,66 @@
+name: zeta_ai
+description: "ZETA AI LABS PVT LTD mobile application."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.11.5
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+
+  flutter_svg: ^2.2.0
+
+  google_fonts: ^6.3.0
+
+  url_launcher: ^6.3.2
+
+  lottie: ^3.3.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    # Main image directory
+    - assets/images/
+
+    # Company logo
+    - assets/images/logo/Logo.jpeg
+
+    # Home screen / hero images
+    - assets/images/hero/hero image.png
+
+    # Company information
+    - assets/images/company/
+
+    # Services
+    - assets/images/services/
+
+    # Team members
+    - assets/images/team/
+
+    # Portfolio projects
+    - assets/images/portfolio/ai.jpeg
+    - assets/images/portfolio/smart.jpeg
+
+    # Client logos
+    - assets/images/clients/
+
+    # Testimonials
+    - assets/images/testimonials/
+
+    # SVG icons
+    - assets/icons/
+
+    # Lottie animations
+    - assets/animations/
