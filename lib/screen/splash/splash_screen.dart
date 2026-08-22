@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import '../../controllers/splash_controller.dart';
 
 // Design tokens — mirror core/theme/colors.dart from the architecture doc.
 class _ZetaColors {
@@ -56,13 +59,11 @@ class _SplashScreenState extends State<SplashScreen>
 
     _controller.forward();
 
-    // Auto-advance to Home once the entrance animation settles.
-    // Replace '/home' with your actual go_router route when Home is wired up.
-    Future.delayed(const Duration(milliseconds: 1800), () {
-      if (mounted) {
-        Navigator.of(context).pushReplacementNamed('/home');
-      }
-    });
+    // SplashBinding lazily registers this for the '/splash' route.
+    // Get.find triggers that lazy creation (and reuses it if it already
+    // exists) — it owns the "when do we hand off to Home" timing so
+    // this widget only has to worry about the entrance animation.
+    Get.find<SplashController>();
   }
 
   @override

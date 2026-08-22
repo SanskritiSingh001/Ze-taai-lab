@@ -14,7 +14,7 @@ class ClientLogo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 100,
-      height: 70,
+      height: 80,
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
         color: Colors.white,

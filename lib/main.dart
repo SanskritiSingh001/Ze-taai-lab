@@ -1,19 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:zeta_ai/screen/home/home_screen.dart';
-import 'package:zeta_ai/screen/splash/splash_screen.dart';
+import 'package:get/get.dart';
 
-void main(){
+import 'core/constants/routes.dart';
+
+void main() {
   runApp(const MyApp());
 }
-class MyApp extends StatelessWidget{
+
+class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: "Zeta AI Labs",
-      home: const HomeScreen(),
+      title: 'Zeta AI Labs',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF2E7D32)),
+        useMaterial3: true,
+      ),
+      initialRoute: Routes.splash,
+      getPages: AppPages.pages,
+      defaultTransition: Transition.fadeIn,
     );
   }
 }
