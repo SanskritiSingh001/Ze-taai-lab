@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import '../about/about_scren.dart';
 import '../about/widgets/cards/ClientLogo.dart';
 import '../about/widgets/cards/PortfolioCard.dart';
 import '../about/widgets/cards/TestimonialCard.dart';
 import '../about/widgets/cards/feature_card.dart';
 import '../about/widgets/service_card/service_card.dart';
+import '../portfolio/portfolio_screen.dart';
+import '../contact/contact_screen.dart';
+import '../services/service_screen.dart';
 
 
 class HomeScreen extends StatelessWidget {
@@ -32,6 +36,7 @@ class HomeScreen extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.w600,
+                      color: Color(0xFF2E7D32),
                     ),
                   ),
 
@@ -48,16 +53,24 @@ class HomeScreen extends StatelessWidget {
                   const SizedBox(height: 12),
 
                   const Text(
-                    'Your company tagline goes here.',
+                    'AI Innovation Team Empowering your Digital Future',
                     style: TextStyle(
                       fontSize: 16,
+                      height: 1.5,
                     ),
                   ),
 
                   const SizedBox(height: 24),
 
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const ContactScreen(),
+                        ),
+                      );
+                    },
                     child: const Text('Get in Touch'),
                   ),
 
@@ -87,13 +100,15 @@ class HomeScreen extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.w600,
+                      color: Color(0xFF2E7D32),
+                      letterSpacing: 1.2,
                     ),
                   ),
 
                   const SizedBox(height: 8),
 
                   const Text(
-                    'ZETA AI LABS',
+                    'Company Overview',
                     style: TextStyle(
                       fontSize: 28,
                       fontWeight: FontWeight.bold,
@@ -103,10 +118,10 @@ class HomeScreen extends StatelessWidget {
                   const SizedBox(height: 12),
 
                   const Text(
-                    'Your company introduction goes here. '
-                        'Keep this short on the Home screen and '
-                        'provide the complete information on the '
-                        'About screen.',
+                    'ZETA AI LABS is dedicated to advancing artificial intelligence '
+                        'through innovative solutions, emphasizing our commitment to '
+                        'collaboration, sustainability, and enhancing everyday technology '
+                        'for a smarter future.',
                     style: TextStyle(
                       fontSize: 16,
                       height: 1.5,
@@ -117,7 +132,12 @@ class HomeScreen extends StatelessWidget {
 
                   TextButton(
                     onPressed: () {
-                      // Navigate to AboutScreen
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const AboutScreen(),
+                        ),
+                      );
                     },
                     child: const Text(
                       'Read More →',
@@ -188,7 +208,12 @@ class HomeScreen extends StatelessWidget {
                     alignment: Alignment.centerRight,
                     child: TextButton(
                       onPressed: () {
-                        // Navigate to ServicesScreen
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const ServicesScreen(),
+                          ),
+                        );
                       },
                       child: const Text(
                         'View All →',
@@ -239,24 +264,28 @@ class HomeScreen extends StatelessWidget {
                     children: const [
 
                       FeatureCard(
-                        icon: Icons.auto_awesome,
-                        title: 'Innovation',
+                        icon: Icons.design_services_outlined,
+                        title: 'Minimal & Modern Design',
                         description:
-                        'Your actual company description from the profile.',
+                        'We create simple, modern and easy-to-navigate '
+                            'websites that improve usability and ROI.',
                       ),
 
                       FeatureCard(
-                        icon: Icons.groups_outlined,
-                        title: 'Expertise',
+                        icon: Icons.analytics_outlined,
+                        title: 'Crystal Clear Reporting',
                         description:
-                        'Your actual company description from the profile.',
+                        'We provide continuous reporting and analytics '
+                            'so you can track leads and sales precisely.',
                       ),
 
                       FeatureCard(
-                        icon: Icons.trending_up,
-                        title: 'Growth',
+                        icon: Icons.language,
+                        title: 'Take Your Business Online',
                         description:
-                        'Your actual company description from the profile.',
+                        'We help businesses build their online presence '
+                            'and reach a wider audience through effective '
+                            'web development and marketing.',
                       ),
                     ],
                   ),
@@ -301,26 +330,36 @@ class HomeScreen extends StatelessWidget {
                   Wrap(
                     spacing: 12,
                     runSpacing: 12,
-                    children: [
+                    children: const [
 
                       ClientLogo(
-                        imagePath: 'assets/images/clients/client_1.png',
-                        clientName: 'Client 1',
+                        imagePath: 'assets/images/clients/kgs.png',
+                        clientName: 'KGS Technology Group',
                       ),
 
                       ClientLogo(
-                        imagePath: 'assets/images/clients/client_2.png',
-                        clientName: 'Client 2',
+                        imagePath: 'assets/images/clients/rgcc.png',
+                        clientName: 'RGCC',
                       ),
 
                       ClientLogo(
-                        imagePath: 'assets/images/clients/client_3.png',
-                        clientName: 'Client 3',
+                        imagePath: 'assets/images/clients/jacob_rochester.png',
+                        clientName: 'Jacob Rochester',
                       ),
 
                       ClientLogo(
-                        imagePath: 'assets/images/clients/client_4.png',
-                        clientName: 'Client 4',
+                        imagePath: 'assets/images/clients/faye_greenman.png',
+                        clientName: 'Faye Greenman Art',
+                      ),
+
+                      ClientLogo(
+                        imagePath: 'assets/images/clients/prana.png',
+                        clientName: 'Prana Leisure Group',
+                      ),
+
+                      ClientLogo(
+                        imagePath: 'assets/images/clients/ahwan.png',
+                        clientName: 'Ahwan Interior',
                       ),
                     ],
                   ),
@@ -363,28 +402,55 @@ class HomeScreen extends StatelessWidget {
                   const SizedBox(height: 20),
 
                   const PortfolioCard(
-                    imagePath: 'assets/images/portfolio/ai.jpeg',
-                    name: 'AI Platform',
-                    category: 'Artificial Intelligence',
+                    imagePath: 'assets/images/portfolio/culinary_platform.png',
+                    name: 'Culinary Portfolio Platform',
+                    category: 'Restaurant Technology',
                     description:
-                    'An intelligent solution designed to automate '
-                        'business processes and improve decision making.',
+                    'A culinary portfolio platform showcasing unique dishes, '
+                        'chef expertise and brand identity through an immersive '
+                        'digital food experience.',
                   ),
 
                   const PortfolioCard(
-                    imagePath: 'assets/images/portfolio/smart.jpeg',
-                    name: 'Smart Analytics',
-                    category: 'Analytics',
+                    imagePath: 'assets/images/portfolio/dubai_hotels.png',
+                    name: 'Dubai Hotel Search & Booking',
+                    category: 'Travel & Hospitality',
                     description:
-                    'A data-driven platform providing actionable '
-                        'insights through intelligent analytics.',
+                    'A smart hotel search and booking platform allowing users '
+                        'to discover hotels by location, budget, amenities and '
+                        'real-time availability.',
+                  ),
+
+                  const PortfolioCard(
+                    imagePath: 'assets/images/portfolio/dess.png',
+                    name: 'DESS Educational Platform',
+                    category: 'Education Technology',
+                    description:
+                    'A modern educational platform developed for Dubai English '
+                        'Speaking School, focused on accessibility, interactivity '
+                        'and seamless communication.',
+                  ),
+
+                  const PortfolioCard(
+                    imagePath: 'assets/images/portfolio/aster_clinic.png',
+                    name: 'Aster Clinic Doctor Platform',
+                    category: 'Healthcare Technology',
+                    description:
+                    'An intelligent doctor discovery and appointment platform '
+                        'helping patients find medical specialists across '
+                        'different branches and specialties.',
                   ),
 
                   Align(
                     alignment: Alignment.centerRight,
                     child: TextButton(
                       onPressed: () {
-                        // Navigate to PortfolioScreen
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const PortfolioScreen(),
+                          ),
+                        );
                       },
                       child: const Text(
                         'View All →',
@@ -431,10 +497,34 @@ class HomeScreen extends StatelessWidget {
 
                   const TestimonialCard(
                     quote:
-                    'ZETA AI LABS delivered an excellent solution '
-                        'that helped us improve our business operations.',
-                    clientName: 'Client Name',
-                    designation: 'CEO, Company',
+                    'Our Mobile sales have skyrocketed since launching '
+                        'the app. The AR feature is a game-changer for our customers.',
+                    clientName: 'Michael Chen',
+                    designation: 'Head of Digital, RetailMax',
+                  ),
+
+                  const TestimonialCard(
+                    quote:
+                    'The team developed beyond our expectations. The platform '
+                        'has transformed how our clients interact with our services.',
+                    clientName: 'Sarah Johnson',
+                    designation: 'CTO, TechFlow Solutions',
+                  ),
+
+                  const TestimonialCard(
+                    quote:
+                    'Our students are more engaged than ever. The platform '
+                        'makes learning fun and accessible from anywhere.',
+                    clientName: 'James Wilson',
+                    designation: 'Director of Education, EduLearn Academy',
+                  ),
+
+                  const TestimonialCard(
+                    quote:
+                    'This system has revolutionized our practice. We can now '
+                        'serve more patients while maintaining the highest quality of care.',
+                    clientName: 'Dr. Emily Rodriguez',
+                    designation: 'Medical Director, HealthCare Plus',
                   ),
                 ],
               ),
@@ -482,7 +572,12 @@ class HomeScreen extends StatelessWidget {
 
                   ElevatedButton(
                     onPressed: () {
-                      // Navigate to ContactScreen
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const ContactScreen(),
+                        ),
+                      );
                     },
                     child: const Text(
                       'Contact Us',
@@ -519,11 +614,29 @@ class HomeScreen extends StatelessWidget {
 
                   // Address
                   const Text(
-                    'j-14, BJB Nagar, Lewis Road, Bhubneswar, 751014, Odisha, India',
+                    'J-14, BJB Nagar, Lewis Road,\n'
+                        'Bhubaneswar 751014, Odisha, India',
                     style: TextStyle(
                       fontSize: 14,
                       height: 1.5,
-                      color: Color(0xFF666666),
+                    ),
+                  ),
+
+                  const SizedBox(height: 12),
+
+                  const Text(
+                    '+91-9337287145',
+                    style: TextStyle(
+                      fontSize: 14,
+                    ),
+                  ),
+
+                  const SizedBox(height: 8),
+
+                  const Text(
+                    'info@zetaailabs.com',
+                    style: TextStyle(
+                      fontSize: 14,
                     ),
                   ),
 
